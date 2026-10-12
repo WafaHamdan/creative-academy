@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -90,7 +90,8 @@
             text-align: center;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #d9c3ea;
             padding: 12px;
         }
@@ -104,7 +105,9 @@
             background: #f6effb;
         }
 
-        input, select, textarea {
+        input,
+        select,
+        textarea {
             width: 100%;
             padding: 10px;
             margin: 8px 0 16px;
@@ -138,6 +141,25 @@
             color: white;
             text-align: center;
             padding: 20px;
+        }
+
+        .course-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .course-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: fit-content;
+            cursor: pointer;
+        }
+
+        .course-option input[type="radio"] {
+            width: auto;
+            margin: 0;
         }
     </style>
 </head>
@@ -269,31 +291,37 @@
             <form id="registrationForm">
 
                 <label for="name">الاسم الكامل:</label>
-                <input type="text" id="name"
-                       name="name" required>
+                <input type="text" id="name" name="name" required>
 
                 <label for="email">البريد الإلكتروني:</label>
-                <input type="email" id="email"
-                       name="email" required>
+                <input type="email" id="email" name="email" required>
+
 
                 <p>اختاري دورتك المفضلة:</p>
 
-                <input type="radio" id="html"
-                       name="course" value="HTML" required>
-                <label for="html">HTML</label>
+                <div class="course-options">
 
-                <input type="radio" id="css"
-                       name="course" value="CSS">
-                <label for="css">CSS</label>
+                    <label class="course-option">
+                        <input type="radio" name="course" value="HTML" required>
+                        <span>HTML</span>
+                    </label>
 
-                <input type="radio" id="js"
-                       name="course" value="JavaScript">
-                <label for="js">JavaScript</label>
+                    <label class="course-option">
+                        <input type="radio" name="course" value="CSS">
+                        <span>CSS</span>
+                    </label>
+
+                    <label class="course-option">
+                        <input type="radio" name="course" value="JavaScript">
+                        <span>JavaScript</span>
+                    </label>
+
+                </div>
 
                 <p>كيف عرفتي عن الأكاديمية؟</p>
 
                 <input type="checkbox" id="friend">
-                <label for="friend">صديقة</label>
+                <label for="friend">صديق</label>
 
                 <input type="checkbox" id="social">
                 <label for="social">التواصل الاجتماعي</label>
@@ -308,8 +336,7 @@
                 </select>
 
                 <label for="message">رسالتك:</label>
-                <textarea id="message" rows="4"
-                    placeholder="اكتبي استفسارك هنا..."></textarea>
+                <textarea id="message" rows="4" placeholder="اكتبي استفسارك هنا..."></textarea>
 
                 <button type="submit">انضمي الآن 💜</button>
                 <p id="result" role="status"></p>
@@ -321,8 +348,7 @@
         <section>
             <h2>🔗 مصادر إضافية</h2>
             <p>يمكنك تعلم المزيد من خلال موقع:</p>
-            <a href="https://www.w3schools.com"
-               target="_blank" rel="noopener noreferrer">
+            <a href="https://www.w3schools.com" target="_blank" rel="noopener noreferrer">
                 W3Schools
             </a>
         </section>
@@ -337,21 +363,41 @@
     </footer>
 
     <script>
-        document.getElementById("registrationForm")
-            .addEventListener("submit", function(event) {
-                event.preventDefault();
 
-                const name = document.getElementById("name").value;
-                const course = document.querySelector(
-                    'input[name="course"]:checked'
-                ).value;
+        const form = document.getElementById("registrationForm");
+        const result = document.getElementById("result");
 
-                document.getElementById("result").textContent =
-                    "شكراً " + name +
-                    " 💜 تم تسجيل طلبك التجريبي في دورة " +
-                    course + " بنجاح!";
+        // عند تغيير الدورة، امسحي رسالة التسجيل القديمة
+        form.querySelectorAll('input[name="course"]')
+            .forEach(function (radio) {
+                radio.addEventListener("change", function () {
+                    result.textContent = "";
+                });
             });
-    </script>
 
+        // عند الضغط على زر التسجيل
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+
+            const selectedCourse = form.querySelector(
+                'input[name="course"]:checked'
+            );
+
+            if (!selectedCourse) {
+                alert("اختاري دورة أولاً");
+                return;
+            }
+
+            const course = selectedCourse.value;
+
+            result.textContent =
+                "شكراً " + name +
+                " 💜 تم تسجيل طلبك التجريبي في دورة " +
+                course + " بنجاح!";
+        });
+    </script>
+    
 </body>
 </html>
