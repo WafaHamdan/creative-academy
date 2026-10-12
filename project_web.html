@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية الإبداع</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Tahoma, Arial, sans-serif;
+            background-color: #faf7ff;
+            color: #40334f;
+            line-height: 1.8;
+        }
+
+        header {
+            background: linear-gradient(135deg, #8054b3, #d58ac9);
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background-color: #eee1fa;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #603c82;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #c45ca6;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 25px;
+        }
+
+        section {
+            background: white;
+            margin: 25px 0;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 4px 15px #e9def0;
+        }
+
+        h2 {
+            color: #8653aa;
+        }
+
+        .courses {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .course {
+            flex: 1 1 220px;
+            background: #f4eafa;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .course h3 {
+            color: #8653aa;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th, td {
+            border: 1px solid #d9c3ea;
+            padding: 12px;
+        }
+
+        th {
+            background: #8653aa;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f6effb;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 16px;
+            border: 1px solid #d7bce8;
+            border-radius: 8px;
+            font: inherit;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+            margin: 8px;
+        }
+
+        button {
+            background: #8653aa;
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #ad69b3;
+        }
+
+        footer {
+            background: #8054b3;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- رأس الصفحة -->
+    <header>
+        <h1>💜 أكاديمية الإبداع</h1>
+        <p>ابدئي رحلتك في عالم البرمجة معنا!</p>
+        <p>تعلّمي اليوم، واصنعي مستقبلك غداً ✨</p>
+    </header>
+
+    <!-- روابط التنقل -->
+    <nav>
+        <a href="#about">من نحن</a>
+        <a href="#courses">الدورات</a>
+        <a href="#schedule">الجدول</a>
+        <a href="#register">التسجيل</a>
+    </nav>
+
+    <main>
+
+        <!-- نبذة عن الأكاديمية -->
+        <section id="about">
+            <h2>🌸 من نحن؟</h2>
+            <p>
+                مرحباً بك في <strong>أكاديمية الإبداع</strong>!
+                نحن منصة تعليمية تهدف إلى تعليم البرمجة
+                بطريقة <em>سهلة وممتعة</em>.
+            </p>
+
+            <h3>لماذا تختارين أكاديميتنا؟</h3>
+            <ul>
+                <li>دروس مناسبة للمبتدئات</li>
+                <li>مشاريع عملية ممتعة</li>
+                <li>محتوى تعليمي منظم</li>
+                <li>تدريبات بعد كل درس</li>
+            </ul>
+        </section>
+
+        <!-- الدورات -->
+        <section id="courses">
+            <h2>💻 دوراتنا التعليمية</h2>
+
+            <div class="courses">
+
+                <div class="course">
+                    <h3>🌐 HTML</h3>
+                    <p>تعلّمي بناء صفحات الويب.</p>
+                    <p><b>المستوى:</b> مبتدئ</p>
+                    <p>المدة: 4 أسابيع</p>
+                </div>
+
+                <div class="course">
+                    <h3>🎨 CSS</h3>
+                    <p>تعلّمي تصميم وتنسيق المواقع.</p>
+                    <p><b>المستوى:</b> مبتدئ</p>
+                    <p>المدة: 5 أسابيع</p>
+                </div>
+
+                <div class="course">
+                    <h3>✨ JavaScript</h3>
+                    <p>تعلّمي إضافة التفاعل للمواقع.</p>
+                    <p><b>المستوى:</b> متوسط</p>
+                    <p>المدة: 6 أسابيع</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- جدول المحاضرات -->
+        <section id="schedule">
+            <h2>📅 جدول المحاضرات</h2>
+
+            <table>
+                <caption>الجدول الأسبوعي للدورات</caption>
+                <tr>
+                    <th>الدورة</th>
+                    <th>اليوم</th>
+                    <th>الوقت</th>
+                </tr>
+                <tr>
+                    <td>HTML</td>
+                    <td>الأحد</td>
+                    <td>4:00 مساءً</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td>الثلاثاء</td>
+                    <td>5:00 مساءً</td>
+                </tr>
+                <tr>
+                    <td>JavaScript</td>
+                    <td>الخميس</td>
+                    <td>6:00 مساءً</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- مستويات التعلم -->
+        <section>
+            <h2>🚀 رحلتك التعليمية</h2>
+
+            <ol>
+                <li>تعلّم أساسيات HTML</li>
+                <li>تصميم الموقع باستخدام CSS</li>
+                <li>إضافة التفاعل باستخدام JavaScript</li>
+                <li>إنشاء مشروعك الأول</li>
+            </ol>
+
+            <h3>مصطلحات مهمة</h3>
+            <dl>
+                <dt><b>HTML</b></dt>
+                <dd>لغة بناء هيكل صفحات الويب.</dd>
+
+                <dt><b>CSS</b></dt>
+                <dd>لغة تنسيق وتصميم الصفحات.</dd>
+
+                <dt><b>JavaScript</b></dt>
+                <dd>لغة إضافة التفاعل للمواقع.</dd>
+            </dl>
+        </section>
+
+        <!-- نموذج التسجيل -->
+        <section id="register">
+            <h2>📝 سجّلي معنا الآن</h2>
+
+            <form id="registrationForm">
+
+                <label for="name">الاسم الكامل:</label>
+                <input type="text" id="name"
+                       name="name" required>
+
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email"
+                       name="email" required>
+
+                <p>اختاري دورتك المفضلة:</p>
+
+                <input type="radio" id="html"
+                       name="course" value="HTML" required>
+                <label for="html">HTML</label>
+
+                <input type="radio" id="css"
+                       name="course" value="CSS">
+                <label for="css">CSS</label>
+
+                <input type="radio" id="js"
+                       name="course" value="JavaScript">
+                <label for="js">JavaScript</label>
+
+                <p>كيف عرفتي عن الأكاديمية؟</p>
+
+                <input type="checkbox" id="friend">
+                <label for="friend">صديقة</label>
+
+                <input type="checkbox" id="social">
+                <label for="social">التواصل الاجتماعي</label>
+
+                <br>
+
+                <label for="city">المدينة:</label>
+                <select id="city" name="city">
+                    <option value="Jeddah">جدة</option>
+                    <option value="Riyadh">الرياض</option>
+                    <option value="Dammam">الدمام</option>
+                </select>
+
+                <label for="message">رسالتك:</label>
+                <textarea id="message" rows="4"
+                    placeholder="اكتبي استفسارك هنا..."></textarea>
+
+                <button type="submit">انضمي الآن 💜</button>
+                <p id="result" role="status"></p>
+
+            </form>
+        </section>
+
+        <!-- رابط خارجي -->
+        <section>
+            <h2>🔗 مصادر إضافية</h2>
+            <p>يمكنك تعلم المزيد من خلال موقع:</p>
+            <a href="https://www.w3schools.com"
+               target="_blank" rel="noopener noreferrer">
+                W3Schools
+            </a>
+        </section>
+
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <p>💜 أكاديمية الإبداع</p>
+        <p>صُنِع بحب وشغف للبرمجة ✨</p>
+        <p>&copy; 2026 جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+        document.getElementById("registrationForm")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById("name").value;
+                const course = document.querySelector(
+                    'input[name="course"]:checked'
+                ).value;
+
+                document.getElementById("result").textContent =
+                    "شكراً " + name +
+                    " 💜 تم تسجيل طلبك التجريبي في دورة " +
+                    course + " بنجاح!";
+            });
+    </script>
+
+</body>
+</html>
